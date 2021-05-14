@@ -1,0 +1,19 @@
+{
+  "name": "@myscope/greeter",
+  "version": "0.0.0",
+  "description": "",
+  "devDependencies": {
+    "typescript": "^3.7.2"
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": [],
+  "license": "ISC",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc --pretty",
+    "prepare": "npm run build"
+  },
+  "typings": "lib/index.d.ts"
+}
