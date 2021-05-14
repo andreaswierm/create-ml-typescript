@@ -1,5 +1,5 @@
 {
-  "name": "@myscope/greeter",
+  "name": "@create-ml-typescript/cli",
   "version": "0.0.0",
   "description": "",
   "devDependencies": {
