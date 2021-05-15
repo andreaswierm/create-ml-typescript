@@ -23,7 +23,7 @@
   "scripts": {
     "test": "jest",
     "test-ci": "jest --ci --coverage",
-    "start": "lerna run start --parallel --scope @create-ml-typescript/scripts",
+    "start": "lerna run start --parallel",
     "prepare": "husky install",
     "lint": "eslint \"packages/**/{src,__tests__}/**/*.ts\"",
     "format": "prettier --write ."

@@ -1,4 +1,4 @@
-import createScaffoldProject from "createScaffoldProject/createScaffoldProject";
+import createScaffoldProject from "./createScaffoldProject";
 
 export {
   createScaffoldProject,

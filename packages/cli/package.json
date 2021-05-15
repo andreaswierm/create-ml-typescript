@@ -14,7 +14,7 @@
   "license": "ISC",
   "main": "lib/index.js",
   "scripts": {
-    "start": "nodemon --exec 'yarn build' --watch ./src/**",
+    "start": "nodemon",
     "make-index-executable": "chmod +x ./lib/index.js",
     "build": "tsc --pretty && yarn make-index-executable",
     "prepare": "yarn build"

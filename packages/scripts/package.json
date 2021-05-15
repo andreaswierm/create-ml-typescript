@@ -13,8 +13,8 @@
   "license": "ISC",
   "main": "lib/index.js",
   "scripts": {
-    "start": "nodemon --exec 'yarn build' --watch ./src/**",
-    "build": "tsc --pretty",
+    "start": "nodemon",
+    "build": "tsc --pretty --project ./tsconfig.json",
     "prepare": "yarn build"
   },
   "typings": "lib/index.d.ts"
