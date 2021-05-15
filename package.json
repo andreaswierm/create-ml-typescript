@@ -23,9 +23,10 @@
   "scripts": {
     "test": "jest",
     "test-ci": "jest --ci --coverage",
-    "format": "prettier --write .",
+    "start:watch": "lerna run start --parallel",
+    "prepare": "husky install",
     "lint": "eslint \"packages/**/{src,__tests__}/**/*.ts\"",
-    "prepare": "husky install"
+    "format": "prettier --write ."
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
