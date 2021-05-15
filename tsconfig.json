@@ -1,15 +1,19 @@
 {
   "$schema": "http://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "module": "commonjs",
+    "typeRoots": ["./node_modules/@types"],
     "target": "es5",
-    "lib": ["es6"],
-    "sourceMap": false,
-    "allowJs": false,
-    "moduleResolution": "node",
     "strict": true,
-    "declaration": true,
+    "sourceMap": false,
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "lib": ["es6"],
+    "esModuleInterop": true,
     "downlevelIteration": true,
-    "typeRoots": ["./node_modules/@types"]
+    "declaration": true,
+    "allowJs": false
+  },
+  "paths": {
+    "@create-ml-typescript/cli": ["../cli/src"]
   }
 }

@@ -2,7 +2,8 @@
   "$schema": "http://json.schemastore.org/tsconfig",
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "./lib"
+    "outDir": "./lib",
+    "baseUrl": "./src"
   },
   "include": [
     "./src"
