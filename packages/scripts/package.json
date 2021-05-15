@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "",
   "devDependencies": {
+    "@types/validate-npm-package-name": "^3.0.2",
     "nodemon": "^2.0.7",
     "typescript": "^3.7.2"
   },
@@ -17,5 +18,9 @@
     "build": "tsc --pretty --project ./tsconfig.json",
     "prepare": "yarn build"
   },
-  "typings": "lib/index.d.ts"
+  "typings": "lib/index.d.ts",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "validate-npm-package-name": "^3.0.0"
+  }
 }

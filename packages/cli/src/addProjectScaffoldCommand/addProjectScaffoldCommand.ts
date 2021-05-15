@@ -12,8 +12,9 @@ const addProjectScaffoldCommand = (yargs: yargs.Argv): yargs.Argv => {
       });
     },
     ({ projectName }: { projectName: string }) => {
-      createScaffoldProject({
+      return createScaffoldProject({
         projectName,
+        projectParentPath: process.cwd(),
       });
     }
   );
