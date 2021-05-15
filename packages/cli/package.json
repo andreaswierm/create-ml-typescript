@@ -16,7 +16,7 @@
   "scripts": {
     "start": "nodemon",
     "make-index-executable": "chmod +x ./lib/index.js",
-    "build": "tsc --pretty && yarn make-index-executable",
+    "build": "tsc --pretty --project ./tsconfig.json && yarn make-index-executable",
     "prepare": "yarn build"
   },
   "typings": "lib/index.d.ts",

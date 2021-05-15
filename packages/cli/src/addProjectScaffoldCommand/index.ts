@@ -1,3 +1,3 @@
-import addProjectScaffoldCommand from "addProjectScaffoldCommand/addProjectScaffoldCommand";
+import addProjectScaffoldCommand from './addProjectScaffoldCommand';
 
 export default addProjectScaffoldCommand;
