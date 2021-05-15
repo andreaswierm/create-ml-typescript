@@ -1,10 +1,10 @@
 import { add, greet } from '../src';
 
-describe('@myscope/greeter module', () => {
+describe('@create-ml-typescript/cli module', () => {
   it('should add', () => {
     expect(add(2, 3)).toEqual(5);
   });
   it('should greet', () => {
-    expect(greet('world')).toEqual('@myscope/greeter says: hello to world');
+    expect(greet('world')).toEqual('@create-ml-typescript/cli says: hello to world');
   });
 });
