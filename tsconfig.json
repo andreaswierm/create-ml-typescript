@@ -14,6 +14,7 @@
     "allowJs": false
   },
   "paths": {
-    "@create-ml-typescript/cli": ["../cli/src"]
+    "@create-ml-typescript/cli": ["../cli/src"],
+    "@create-ml-typescript/scripts": ["../scripts/src"]
   }
 }

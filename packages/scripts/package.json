@@ -1,0 +1,21 @@
+{
+  "name": "@create-ml-typescript/scripts",
+  "version": "0.0.0",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "typescript": "^3.7.2"
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": [],
+  "license": "ISC",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "nodemon --exec 'yarn build' --watch ./src/**",
+    "build": "tsc --pretty",
+    "prepare": "yarn build"
+  },
+  "typings": "lib/index.d.ts"
+}
