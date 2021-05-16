@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "",
   "devDependencies": {
+    "@types/fs-extra": "^9.0.11",
     "@types/validate-npm-package-name": "^3.0.2",
     "nodemon": "^2.0.7",
     "typescript": "^3.7.2"
@@ -15,12 +16,17 @@
   "main": "lib/index.js",
   "scripts": {
     "start": "nodemon",
-    "build": "tsc --pretty --project ./tsconfig.json",
-    "prepare": "yarn build"
+    "prebuild": "del lib/",
+    "build": "yarn prebuild && tsc --pretty --project ./tsconfig.json && yarn postbuild",
+    "prepare": "yarn build",
+    "postbuild": "copyfiles ./src/createScaffoldProject/template/** ./lib/template -u 3 && copyfiles ./src/createScaffoldProject/template/**/* ./lib/template -u 3"
   },
   "typings": "lib/index.d.ts",
   "dependencies": {
     "chalk": "^4.1.1",
+    "copyfiles": "^2.4.1",
+    "del-cli": "^3.0.1",
+    "fs-extra": "^10.0.0",
     "validate-npm-package-name": "^3.0.0"
   }
 }

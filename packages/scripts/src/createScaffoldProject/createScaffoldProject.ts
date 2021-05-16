@@ -6,6 +6,7 @@ import getProjectNameErrors from './utils/getProjectNameErrors';
 import createPackageJsonFile from './utils/createPackageJsonFile';
 import createDirectory from './utils/createDirectory';
 import showSuccessfulProjectCreatedMessage from './utils/showSuccessfulProjectCreatedMessage';
+import copyDirectory from './utils/copyDirectory';
 
 type CreateScaffoldProjectOptions = {
   projectName: string;
@@ -32,7 +33,11 @@ const createScaffoldProject = async ({
     process.exit(1);
   }
 
+  const templatePath = path.join(__dirname, '../template');
+
   await createDirectory(projectPath);
+
+  await copyDirectory(templatePath, projectPath);
 
   await createPackageJsonFile(projectPath, projectName);
 

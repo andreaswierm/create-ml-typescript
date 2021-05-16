@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "",
   "devDependencies": {
+    "@create-ml-typescript/scripts": "^0.0.0",
     "@types/yargs": "^16.0.1",
     "nodemon": "^2.0.7",
     "typescript": "^3.7.2"
