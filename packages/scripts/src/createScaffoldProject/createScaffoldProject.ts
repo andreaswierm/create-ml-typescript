@@ -7,6 +7,7 @@ import createPackageJsonFile from './utils/createPackageJsonFile';
 import createDirectory from './utils/createDirectory';
 import showSuccessfulProjectCreatedMessage from './utils/showSuccessfulProjectCreatedMessage';
 import copyDirectory from './utils/copyDirectory';
+import createGitRepository from './utils/createGitRepository';
 
 type CreateScaffoldProjectOptions = {
   projectName: string;
@@ -40,6 +41,8 @@ const createScaffoldProject = async ({
   await copyDirectory(templatePath, projectPath);
 
   await createPackageJsonFile(projectPath, projectName);
+
+  await createGitRepository(projectPath);
 
   showSuccessfulProjectCreatedMessage(projectPath, projectName);
 };
