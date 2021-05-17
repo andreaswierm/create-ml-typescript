@@ -23,7 +23,10 @@ const cloneTemplateFromLocalDirectory: CloneTemplateHandler = async (
   console.log('templatePath', templatePath);
 };
 
-const cloneTemplateFromGithub: CloneTemplateHandler = async () => {
+const cloneTemplateFromGithub: CloneTemplateHandler = async (
+  directoryPath,
+  templateName
+) => {
   const repoUrl = path.join(
     __dirname,
     `https://github.com/andreaswierm/create-ml-typescript/blob/main/packages/templates/src/${mapTemplateNameToFolderName[templateName]}`
