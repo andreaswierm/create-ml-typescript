@@ -6,8 +6,12 @@ import getProjectNameErrors from './utils/getProjectNameErrors';
 import createPackageJsonFile from './utils/createPackageJsonFile';
 import createDirectory from './utils/createDirectory';
 import showSuccessfulProjectCreatedMessage from './utils/showSuccessfulProjectCreatedMessage';
-import copyDirectory from './utils/copyDirectory';
 import createGitRepository from './utils/createGitRepository';
+import {
+  createCloneTemplateToDirectoryHandler,
+  TemplateName,
+  Templates,
+} from '@create-ml-typescript/templates';
 
 type CreateScaffoldProjectOptions = {
   projectName: string;
@@ -18,6 +22,7 @@ const createScaffoldProject = async ({
   projectName,
   projectParentPath,
 }: CreateScaffoldProjectOptions) => {
+  const templateName: TemplateName = Templates.DEFAULT;
   const projectNameErrors = getProjectNameErrors(projectName);
 
   if (projectNameErrors.length) {
@@ -34,15 +39,21 @@ const createScaffoldProject = async ({
     process.exit(1);
   }
 
-  const templatePath = path.join(__dirname, '../template');
-
   await createDirectory(projectPath);
 
-  await copyDirectory(templatePath, projectPath);
+  const cloneTemplateToDirectoryHandler = createCloneTemplateToDirectoryHandler(
+    process.env.NODE_ENV === 'development' ? 'LOCAL' : 'REMOTE'
+  );
 
-  await createPackageJsonFile(projectPath, projectName);
+  await cloneTemplateToDirectoryHandler(projectPath, templateName);
 
-  await createGitRepository(projectPath);
+  // await cloneTemplateToProjectPath(projectPath, templateName);
+
+  // await copyDirectory(templatePath, projectPath);
+
+  // await createPackageJsonFile(projectPath, projectName);
+
+  // await createGitRepository(projectPath);
 
   showSuccessfulProjectCreatedMessage(projectPath, projectName);
 };

@@ -1,10 +1,8 @@
 {
-  "name": "@create-ml-typescript/scripts",
+  "name": "@create-ml-typescript/templates",
   "version": "0.0.0",
   "description": "",
   "devDependencies": {
-    "@create-ml-typescript/templates": "^0.0.0",
-    "@types/validate-npm-package-name": "^3.0.2",
     "nodemon": "^2.0.7",
     "typescript": "^3.7.2"
   },
@@ -17,11 +15,7 @@
   "scripts": {
     "start": "nodemon",
     "build": "tsc --pretty --project ./tsconfig.json",
-    "prepare": "yarn build"
+    "prepare": "npm run build"
   },
-  "typings": "lib/index.d.ts",
-  "dependencies": {
-    "chalk": "^4.1.1",
-    "validate-npm-package-name": "^3.0.0"
-  }
+  "typings": "lib/index.d.ts"
 }

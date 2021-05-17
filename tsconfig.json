@@ -15,6 +15,7 @@
   },
   "paths": {
     "@create-ml-typescript/cli": ["../cli/src"],
-    "@create-ml-typescript/scripts": ["../scripts/src"]
+    "@create-ml-typescript/scripts": ["../scripts/src"],
+    "@create-ml-typescript/templates": ["../templates/src"]
   }
 }
