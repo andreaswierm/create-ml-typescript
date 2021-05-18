@@ -7,6 +7,7 @@ import createPackageJsonFile from './utils/createPackageJsonFile';
 import createDirectory from './utils/createDirectory';
 import showSuccessfulProjectCreatedMessage from './utils/showSuccessfulProjectCreatedMessage';
 import createGitRepository from './utils/createGitRepository';
+
 import {
   createCloneTemplateToDirectoryHandler,
   TemplateName,
@@ -47,13 +48,9 @@ const createScaffoldProject = async ({
 
   await cloneTemplateToDirectoryHandler(projectPath, templateName);
 
-  // await cloneTemplateToProjectPath(projectPath, templateName);
+  await createPackageJsonFile(projectPath, projectName);
 
-  // await copyDirectory(templatePath, projectPath);
-
-  // await createPackageJsonFile(projectPath, projectName);
-
-  // await createGitRepository(projectPath);
+  await createGitRepository(projectPath);
 
   showSuccessfulProjectCreatedMessage(projectPath, projectName);
 };

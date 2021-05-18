@@ -1,6 +1,8 @@
 import path from 'path';
 import { TemplateName, Templates } from '../types';
 import { EnvironmentMode, EnvironmentModes } from './types';
+import fs from 'fs-extra';
+import { exec } from 'child_process';
 
 const mapTemplateNameToFolderName: Record<Templates, string> = {
   [Templates.DEFAULT]: 'default',
@@ -20,7 +22,7 @@ const cloneTemplateFromLocalDirectory: CloneTemplateHandler = async (
     `../../src/${mapTemplateNameToFolderName[templateName]}`
   );
 
-  console.log('templatePath', templatePath);
+  await fs.copy(templatePath, directoryPath);
 };
 
 const cloneTemplateFromGithub: CloneTemplateHandler = async (
@@ -31,6 +33,10 @@ const cloneTemplateFromGithub: CloneTemplateHandler = async (
     __dirname,
     `https://github.com/andreaswierm/create-ml-typescript/blob/main/packages/templates/src/${mapTemplateNameToFolderName[templateName]}`
   );
+
+  const command = `git clone --depth 1 ${repoUrl} ${directoryPath}`;
+
+  await new Promise((resolve) => exec(command, resolve));
 };
 
 const mapEnvironmentModeToCloneHandler: Record<
